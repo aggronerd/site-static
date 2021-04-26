@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1501868-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1501868-4');
+    </script>
+    <meta charset="utf-8">
+    <title>Gregory Doran - Quick Reference Mugs</title>
+    <link rel="stylesheet" type="text/css" href="/style/styles.css" media="screen">
+    <meta name="generator" content="nanoc 4.11.23">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Df1fZm1bAhdYv3JjS5ak0Hgw7GsMZX1rxulY8eyVOWs" />
+    
+      <meta property="og:image" content="http://gregorydoran.co.uk/blog/projects/images/linux_mug_banner.jpg">
+      <meta property="og:image:type" content="image/jpeg">
+      <meta property="og:image:width" content="1024">
+      <meta property="og:image:height" content="1024">
+    
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <div class="page-header">
+            <h1>Gregory Doran <small>Software development and consultancy</small></h1>
+          </div>
+          <ul class="nav nav-pills">
+            <li role="presentation" class="">
+              <a href="/">About</a>
+            </li>
+            <li role="presentation" class="">
+              <a href="/contact.html">Contact</a>
+            </li>
+            <li role="presentation" class="">
+              <a href="/blog/projects/">Projects</a>
+            </li>
+          </ul>
+          <div class='container-fluid'>
+<div class='row'>
+<div class='col-xs-12'>
+<h2>
+Linux Command-line Quick Reference Mug
+<small>for February</small>
+</h2>
+</div>
+</div>
+<div class='row'>
+<div class='col-sm-6'>
+<p class='text-left'>
+<small>
+Author: Gregory Doran
+</small>
+</p>
+</div>
+<div class='col-sm-6'>
+<p class='text-right'>
+<small>
+Published: 23rd March 2021
+</small>
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>The Problem</h3>
+<p>
+As a software developer I love working with different tools and programming languages. Often
+you can end up switching between these day-to-day depending on the
+project and priorities. Programming languages can be different in a lot of ways, including
+syntax, how they are compiled and how certain technical details like memory management work.
+Tools such as integrated development environments or text editors can have different
+keyboard shortcuts and commands.
+</p>
+<p>
+When switching between projects it is easy to get caught out by these subtle
+differences and so you might end up Googling simple things, for example, how to iterate
+over a dict/hashmap in Javascript after having worked on a Golang project for a month.
+What you're often looking for in these situations is a few pointers or
+examples of how to do certain things.
+</p>
+<p>
+<strong>I enjoy a cup of tea or coffee.</strong>
+Whenever I'm working there is a mug
+on my desk. Either awaiting or containing a hot beverage. It is probably fair to say this is
+common in most office based professions.
+</p>
+<h3>The Solution</h3>
+<p>
+<strong>
+In order to solve this problem I have
+designed a mug crammed with as much quick reference information
+as possible.
+</strong>
+It sits on my desk where generally a hot drink is on-hand before 3pm and if
+I need to look up something it might save me a Google search!
+It's not an original idea, there were a few around back-in-the-day. However, some searching failed to find one that
+really crams as much useful information as physically possible and looks good.
+</p>
+<p>
+For the first mug the subject is
+<strong>the Linux command line</strong>. Why? Well...
+</p>
+<ol>
+<li>
+It is a subject I am presently familiar with but still have to occasionally Google
+something - so now is probably the best time to jot down some good
+commands.
+</li>
+<li>
+For a first attempt I wanted to allow myself time to work on the design of the mugs and
+not strive to learn a whole new subject.
+</li>
+</ol>
+<h3>Technical Design Considerations</h3>
+<p>
+If you are looking to create merchandise like this there are increasingly more companies
+able to create products with your designs. For this my initial choice was
+<a href="https://www.redbubble.com/">Red Bubble</a>
+. I had purchased a gift from them before and the recipient was happy with it.
+They have good guidelines on what dimensions work best for
+different products, so all I had to do was create an image of that exact size, upload it to
+their website and order it.
+</p>
+<p>
+So that it is possible to make more of these designs with minimal effort I wanted styling to be
+decoupled from the content. HTML and stylesheets (CSS) is what we typically use for
+websites. CSS to provides styling, AKA how things look,
+and HTML contains details about the content. When it comes to making a change to one
+of the quick reference snippets it is just a matter of changing the HTML.
+On the other hand, if the background colour was to be changed only
+the stylesheets would need a small update.
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='The HAML for the linux mug' src='images/linux_mug_code.png'>
+<div class='caption'>
+<p>
+The mug content as HAML, when compiled using nanoc generates a formatted
+image as shown in the photos.
+</p>
+</div>
+</div>
+</div>
+<div class='col-md-6'>
+<p>
+To generate the individual mugs' designs what I actually created was a static "website"
+that could be rendered into an image as part of a pipeline process.
+</p>
+<p>
+Although the web-page for each mug would be static there is a need to introduce some
+dynamic elements. This is to limit repetition in the code and allow templates to define
+the layout. For this I have used
+<a href="https://nanoc.ws/">Nanoc</a>
+a static site generator in Ruby. Nanoc allows for the following:
+</p>
+<ul>
+<li>
+<strong>HAML</strong>
+- A templating language for generating HTML which removes the rather annoying need to
+remember to close every HTML element, but does require you to indent everything...
+</li>
+<li>
+<strong>SASS support</strong>
+- Allows variables and other cool things that CSS lacks. Using this a single variable
+can specify the primary colour for the theme and generate a palette of other colours
+based off it.
+</li>
+<li>
+<strong>Custom filters</strong>
+- For this I added a filter which actually calls Google Chrome to render the image of
+the mug content as part of the static generated files.
+</li>
+<li>
+<strong>Other cool stuff</strong>
+- You can use it to detect broken links, validate HTML and CSS, verify accessibility
+and more.
+</li>
+</ul>
+<p>
+So whenever I make a change to the design or content of the mugs I run
+<code>nanoc compile</code>
+and the static content for the site is generated. This is a simpler and cheaper to host than
+server-side dynamic websites using, for example, PHP, Ruby on Rails or Java. You can still
+create a great website, host it cheaply but with some limitations on interactive elements.
+In fact this website is generated using Nanoc and uploaded to an S3 bucket. As a result it's
+super cheap to host.
+</p>
+<p>
+The mug's static content is defined as snippets using specific CSS classes and code examples
+using
+<code>&lt;code&gt;</code>
+elements in HTML. Optionally,
+<code>&lt;span&gt;</code>
+tags are thrown in to apply semantics, such as emphasis on the
+command the snippet is for and values that should be substituted. There are some layout
+specific elements to arrange the mug into four columns and to fit two snippets next to one
+another. Essentially all the hard work on
+the design for this mug can be reused for the next.
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h4>Prototyping</h4>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-9'>
+<p>
+In order to get the content right and typo free I printed the design onto
+paper, cropped and cello-taped it to an old coffee mug. This allowed me to try the snippets
+as intended as well as write notes and corrections directly on it. What became clear
+from doing this was that light text on
+a dark background, standard with old-style terminals, does not work well when printed.
+I used this prototype for a couple of weeks. Once happy with the design it was
+uploaded and an order was placed.
+</p>
+</div>
+<div class='col-md-3'>
+<div class='thumbnail'>
+<img alt='Prototype version of the mug' src='images/linux_mug_prototype.jpg'>
+<div class='caption'>
+<p>
+Very simple sellotaped prototype.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>The Finished Product</h3>
+<p>
+After placing the order my new mug arrived a few
+days later. It has been in regular use ever since and overall I am very happy with it.
+The intention was to have a link to buy these with this update,
+<em>however the mug that Red Bubble sent me had some pretty bad smudges at the edges...</em>
+So before that happens I need to try some other websites.
+</p>
+<div class='alert alert-info' role='alert'>
+<strong>
+Please follow
+<a href="https://twitter.com/aggronerd">@aggronerd on Twitter</a>
+for updates on when the Linux Quick Reference Mug will be available to buy.
+</strong>
+I will post updates EVERYWHERE as soon as they are available.
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='An image of the mug left-hand side' src='images/linux_mug_lhs.jpg'>
+<div class='caption'>
+<p>
+Left hand side starts with basic Linux commands and some useful keyboard shortcuts for
+the terminal.
+</p>
+</div>
+</div>
+</div>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='An image of the mug left-hand side' src='images/linux_mug_rhs.jpg'>
+<div class='caption'>
+<p>
+Towards the other side the snippets become more elaborate and require a bit of
+reverse-engineering if you're new to this stuff but the idea is that it can help you
+revise. Sometimes the best way to learn something is to try it. If a snippet is
+potentially destructive they have a skull symbol to indicate that.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>Conclusions</h3>
+<p>
+Even if you know most of it there might be something on there
+you look at which is new or you might need a refresher on. If you return to the Linux
+terminal after a long hiatus you can just whip out this mug, fill it with your favourite
+beverage, and have a quick refresher on how to redirect stderr to stdout.
+</p>
+<p>
+I hope to find out if it can be used as a learning aid to someone relatively new to
+the field. It would have helped me when I was 22 straight out of uni get to grasp with some
+practical examples.
+</p>
+<p>
+A possible concern is that the sheer amount of snippets and their shorthand nature may
+overwhelm or be useless. I personally prefer to learn from doing and first-principles. It
+would be good to get feedback on this aspect.
+</p>
+<p>
+I plan open some channels for feedback and perhaps do polls
+on what future mugs should cover as subjects and possibly setup a Pateron page... Buying
+these mugs would be a fantastic way to support this ongoing work.
+</p>
+<h3>
+Possible Issues
+</h3>
+<p>
+There were a few things that crossed my mind whilst doing this:
+</p>
+<ul>
+<li>
+Everyone's usage of the linux command-line is different. They're not hyper personalised
+but could be to use someone's preferred editor, for example, or include Red Hat flavour
+of commands instead.
+</li>
+<li>
+The snippets/commands are going to get out-of-date due to changes in the technology.
+</li>
+<li>
+There are not much protections for the designs, does that matter?
+</li>
+</ul>
+<p>
+With that last point in mind the tools for generating the mug designs could be open-source,
+ideally with a license that wouldn't prohibit them from being sold in order to support the
+designers/developers working on it. They would be much better with the
+combined wisdom of a community of developers. Other people working on these designs would
+open them to corrections including when they become out of date.
+</p>
+<h2>Future work</h2>
+<p>
+Once the initial mug is available to buy I would like to make another one. Here are some
+ideas for which subjects to do next, but I'm open to suggestions so please get in contact
+if you have some ideas:
+</p>
+<ul>
+<li>
+<strong>Golang</strong>
+(covering syntax, commands and common libraries) - For this it will be interesting to
+style larger snippets, rather than the single line examples on the Linux mug.
+</li>
+<li>
+<strong>Manderin Chinese</strong>
+- get some basic phrases in romanised form (Pinyin) to help someone practise and
+memorise them.
+</li>
+<li>
+<strong>Typescript with React</strong>
+- Every blue moon I come back to working with Typescript so would really benefit
+from the main method names used and examples of things like hooks.
+</li>
+</ul>
+<p>
+Please
+<a href="/contact.html">contact me here</a>
+or on
+<a href="https://twitter.com/aggronerd">Twitter</a>
+if you have any thoughts or ideas on this.
+</p>
+</div>
+</div>
+</div>
+
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+      <div class="row footer-row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 footer-blurb">
+          <p>
+            <small>
+              Gregory Doran Ltd - IT Consultancy and Software Development <br />
+              Registered office: First Floor, Telecom House, 125-135 Preston Road, Brighton, BN1 6AF. <br />
+              Registered company no: 12550079
+            </small>
+          </p>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

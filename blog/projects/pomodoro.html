@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1501868-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1501868-4');
+    </script>
+    <meta charset="utf-8">
+    <title>Gregory Doran - Pomodoro Timer</title>
+    <link rel="stylesheet" type="text/css" href="/style/styles.css" media="screen">
+    <meta name="generator" content="nanoc 4.11.23">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Df1fZm1bAhdYv3JjS5ak0Hgw7GsMZX1rxulY8eyVOWs" />
+    
+      <meta property="og:image" content="http://gregorydoran.co.uk/blog/projects/images/pomodoro_square.jpg">
+      <meta property="og:image:type" content="image/jpeg">
+      <meta property="og:image:width" content="1024">
+      <meta property="og:image:height" content="1024">
+    
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <div class="page-header">
+            <h1>Gregory Doran <small>Software development and consultancy</small></h1>
+          </div>
+          <ul class="nav nav-pills">
+            <li role="presentation" class="">
+              <a href="/">About</a>
+            </li>
+            <li role="presentation" class="">
+              <a href="/contact.html">Contact</a>
+            </li>
+            <li role="presentation" class="">
+              <a href="/blog/projects/">Projects</a>
+            </li>
+          </ul>
+          <div class='container-fluid'>
+<div class='row'>
+<div class='col-xs-12'>
+<h2>
+Pomodoro Timer
+<small>for January</small>
+</h2>
+</div>
+</div>
+<div class='row'>
+<div class='col-sm-6'>
+<p class='text-left'>
+<small>
+Author: Gregory Doran
+</small>
+</p>
+</div>
+<div class='col-sm-6'>
+<p class='text-right'>
+<small>
+Published: 16th February 2021
+</small>
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>Background</h3>
+<p>
+<a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro technique</a>
+is a method of time management developed by Francesco Cirillo, whereby a timer is used
+to break down work into intervals. Typically these intervals are 25 minutes
+of focused work followed by a 5 minute break and repeating the 25 minute interval for a
+total of 4 then a longer break is allowed. This is great when you want to be focused on one
+thing but allow yourself a breaks and time to catch up on other work items. There's a lot
+information out there and I recommend reading up on it.
+</p>
+<h3>Problem</h3>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-8'>
+<p>
+My partner had been following this process and was having some
+success whilst revising for an exam. However, one of the greatest enemies to the common
+procrastinator is a smart phone. She was having to use an app on her phone and during these
+stressful periods struggled to tear herself away from the distracting influence of
+notifications.
+</p>
+<h4>Observations when using an app</h4>
+<ul>
+<li>
+Having an app on the smart-phone provides the
+<strong>temptation to get distracted</strong>
+by other notifications and messages on the phone.
+</li>
+<li>
+If you're trying to complete pomodoros in an office environments
+<strong>your colleagues may not be aware and can disrupt the flow</strong>
+. It would be good to make them aware of the technique
+and how it can help improve productivity.
+</li>
+<li>
+Its a bit of an
+<strong>extra effort to load the app on the phone</strong>
+. It would be nice if it was as easy to use as a chess-clock.
+</li>
+</ul>
+<h4>The solution should...</h4>
+<ol>
+<li>Be a specific device for the job.</li>
+<li>Stand out such that it also makes other persons aware of the technique.</li>
+<li>Be really simple and quick to use.</li>
+</ol>
+<h3>Market</h3>
+<p>
+I couldn't find anything on the web that functioned as a pomodoro timer specifically. Just
+a quick Google or a search on Amazon brought up a bunch of Tomato shaped mechanical timers.
+Nothing jumped out as resolving all of these requirements.
+</p>
+<p>
+<strong>Potentially there could be a market outside for this, but no exhaustive</strong>
+research was done
+. It just sounded
+<strong>fun</strong>
+and relatively simple project to do. If it
+gets to a point where a few can be made I'll share them with friends so they can give
+real feedback. Additionally for the first prototype my partner would be the guinea pig.
+</p>
+</div>
+<div class='col-md-4'>
+<img alt='An image of the Pomodoro timer rendered in CAD software' class='img-thumbnail' src='images/pomodoros_product_search.png'>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>The Solution</h3>
+<p>
+The initial prototype took about two weeks to complete. Spending most evenings and weekends
+towards finishing it.
+</p>
+<h4>Features</h4>
+<ul>
+<li>
+<strong>
+Red, Yellow and Green LEDs
+</strong>
+- This coupled with some resistors and a darlington array
+(ULN2003AN) providing indicators to the status (working, short break or long break). The
+darlington array was something I knew would output more current
+than the pins of the microprocessor.
+</li>
+<li>
+<strong>
+Peizo Buzzer
+</strong>
+- To sound the start and end of a pomodoro.
+</li>
+<li>
+<strong>
+Two push buttons
+</strong>
+- One to start or pause the timer, the other to reset it.
+</li>
+<li>
+<strong>
+3D printed case
+</strong>
+- This comprised of two parts that could be screwed together with M4  screws. The
+design for which included intuitive icons related to each of the 3 status LEDs.
+</li>
+</ul>
+<p>
+This was a very rough prototype which my could be used straight away, that way at least my
+partner could give some feedback to improve further iterations. It was based around
+an Arduino Nano 33 IoT, which happened to be lying-around. Certainly a bit overkill as
+this chip features Wifi and Bluetooth and has a much more powerful microprocessor than
+needed. The whole thing was powered by a single 9V battery which drained far too quickly
+with this microprocessor.
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-6'>
+<h4>Code</h4>
+<p>
+The firmware for the device was developed in C++ using
+<a href="https://platformio.org/">Platform IO</a>
+. Platform IO is a great for those wanting to migrate away from the typical Arduino
+development environment (IDE) whilst allowing access to the libraries provided through the
+Arduino tools. It integrates well enough with the
+<a href="https://www.jetbrains.com/clion/">CLion IDE</a>
+from JetBrains. Using that IDE you get much richer
+inspections as well as the typical syntax corrections, version control and refactoring tools.
+</p>
+<p>
+The code itself was chucked together quite quickly, but once working I could use the
+breadboard mounted version of the device at the same time as designing the casing in
+Autodesk 360. Each of the pomodoro intervals was defined as an implementation of an abstract
+"State" class. For each the following methods could be defined:
+</p>
+<ul>
+<li>
+<code>update(unsigned long elapsedMS)</code>
+- which would be ran periodically and passed elapsed milliseconds since the device was
+reset. For the "working" state this would check whether 25 minutes had passed and if so
+call for the transition into the "paused" state.
+</li>
+<li>
+<code>activate()</code>
+- ran on "entering" the state. For example when entering the "working" (green) state this
+triggers the peizo buzzer to sound.
+</li>
+<li>
+<code>deactivate()</code>
+- ran when "exiting" the state. This was only really used for tallying up time spent if
+transitioning to the "paused" state so it could continue where it set off from if
+"unpaused".
+</li>
+</ul>
+<p>
+The
+<code>main()</code>
+method for the firmware monitors the input from the buttons and triggers the transitioning
+between the states as that happened as when time had elapsed.
+</p>
+<h4>Printing</h4>
+<p>
+The casing was printed in PETG. In this case I used "snow white" PETG from
+<a href="https://ooznest.co.uk/">Ooznest</a>
+. Comprising of 4 parts, which were the front, back and two buttons it was printed on a
+Prusa i3 MK3S using the powdered sheet print bed. The print bed gives a wonderfully bumpy
+but aesthetically pleasing texture.
+</p>
+</div>
+<div class='col-lg-6'>
+<img alt='Screenshot of development underway' class='img-thumbnail' src='images/pomodoro_coding.png'>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>Images</h3>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-4'>
+<p>
+A basic computer aided design (CAD) render of the 3D printed case:
+</p>
+<img alt='An image of the Pomodoro timer rendered in CAD software' class='img-thumbnail' src='images/pomodoro_render.png'>
+</div>
+<div class='col-md-4'>
+<p>
+The inner parts of the prototype show some basic soldering and the peizo buzzer:
+</p>
+<img alt='An image of the Pomodoro timer&#39;s back showing circuitry' class='img-thumbnail' src='images/pomodoro_back_exposed.jpg'>
+</div>
+<div class='col-md-4'>
+<p>
+The prototype with instructions. The other side of the instructions give an explanation
+of the technique for showing to a colleagues:
+</p>
+<img alt='Photograph of the timer with instructions' class='img-thumbnail' src='images/pomodoro_with_instructions.jpg'>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>
+Next Steps
+</h3>
+<p>
+I'm working on a
+<strong>
+new prototype
+</strong>
+which is a bit more stripped back using an ATMega8, for this the plan is to order a small
+batch of printed circuit boards (PCBs) and make 5-10 that I can give to people.
+</p>
+<p>
+One of the first issues the new version will address is power. The 9 volt battery would
+drain very fast, partly due to the development board used but also due to the low capacity
+of these batteries. For the newer version I might opt for three "AAA" batteries.
+Additionally the new version will be "configurable". Using small switches on the back of the
+PCB will allow different presets for the interval durations. I currently like using a shorter
+pomodoro but more frequent to limit the time I look at emails and instant messages whilst
+at work.
+</p>
+<p>
+I'll hopefully remember to post more information about that new version here and perhaps on
+social media.
+<a href="/contact.html">Contact details here if you'd like to comment or discuss</a>
+.
+</p>
+<img alt='An image of the Pomodoro timer&#39;s prototype breadboard' class='img-thumbnail' src='images/pomodoro_breadboard.png'>
+</div>
+</div>
+</div>
+
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+      <div class="row footer-row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 footer-blurb">
+          <p>
+            <small>
+              Gregory Doran Ltd - IT Consultancy and Software Development <br />
+              Registered office: First Floor, Telecom House, 125-135 Preston Road, Brighton, BN1 6AF. <br />
+              Registered company no: 12550079
+            </small>
+          </p>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
