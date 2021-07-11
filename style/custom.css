@@ -1,29 +1,41 @@
+.project-description {
+  min-height: 120px;
+}
+
+span.white-text {
+  color: white;
+}
+
+.navbar {
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.jumbotron-mugs {
+  background-image: url('/blog/projects/images/linux_mug_banner_blurred.jpg');
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 300pt;
+  background-blend-mode: darken;
+}
+
+.jumbotron-projects {
+  background-image: url('/images/projects_bg_image.jpg');
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 300pt;
+  background-blend-mode: darken;
+}
+
 .footer-blurb
 {
   text-align: center;
 }
 
-.service {
-  &-icon {
-    width: 50px;
-    float: left;
-    margin: 20px 0 0 0;
-    color: $brand-primary;
-  }
-
-  &-description {
-    margin-left: 50px;
-  }
-}
-
-.project-description {
-  min-height: 120px;
-}
-
 .footer-row {
   padding-top: 200px;
-}
-
-span.white-text {
-  color: white;
 }
