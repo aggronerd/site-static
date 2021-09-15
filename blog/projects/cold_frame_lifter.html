@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Aggronerd! Cold Frame Temperature Control</title>
+    <link rel="stylesheet" type="text/css" href="/style/styles.css" media="screen">
+    <meta name="generator" content="nanoc 4.12.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-main-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <h1>
+              <a class="navbar-brand" href="/">Aggronerd's</a>
+            </h1>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-main-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="">
+                <a href="/mugs/">Mugs</a>
+              </li>
+              <li class="">
+                <a href="/blog/projects/">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class='container-fluid'>
+<div class='row'>
+<div class='col-xs-12'>
+<h2>
+Cold Frame Temperature Control
+<small>for April</small>
+</h2>
+</div>
+</div>
+<div class='row'>
+<div class='col-sm-6'>
+<p class='text-left'>
+<small>
+Author: Gregory Doran
+</small>
+</p>
+</div>
+<div class='col-sm-6'>
+<p class='text-right'>
+<small>
+Published: 25th August 2021
+</small>
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<h3>Problem</h3>
+<p>
+We have a cold frame at home, which is mostly used in early spring to provide warmth to
+germinating plants. It provides both protection from wind and cold but all too often on a
+sunny day it will overheat. This in turn risks damaging the plants within it as temperatures
+ending up ranging from 1 to 45 degrees celsius (34-113 Fahrenheit).
+</p>
+<p>
+When looking at how to resolve this particular problem the most obvious one is to open and
+close the lid in order to regulate the temperature of the air within the frame. Initially
+I wanted to design something electronic which could monitor humidity as well as temperature
+and along with a motor could lift the lid. The plan was to do this until someone older and
+wiser told me that there is a solution that already exists.
+</p>
+<p>
+A common solution used on greenhouses, including commercial ones, is a mechanical approach
+combining some material (typically wax) that expands under heat in a cylinder attached to
+a leaver. You can find a lot of these available online.
+</p>
+<div class='thumbnail'>
+<img alt='An example of the kind of products that open Greenhouses in hot weather' src='images/cold_frame_lifter_example1.jpg'>
+<div class='caption'>
+<p>
+This is the Bayliss Greenhouse Autovent, which unfortunately is only designed to fit a
+greenhouse. Even if it would fit my cold frame it would require me to screw it into the
+lid preventing the door from being opened and closed.
+</p>
+</div>
+</div>
+<h3>
+Requirements
+</h3>
+<ul>
+<li>
+Opens the lid sufficiently that it cools the inside when it's getting too warm.
+</li>
+<li>
+Unlike existing solutions for greenhouses it would need to allow me to continue to open
+and close the lid manually.
+</li>
+<li>
+Be as cheap as possible.
+</li>
+<li>
+Not involve any electronic components as I originally intended. It would be mechanical
+in the same way that greenhouse solutions work.
+</li>
+</ul>
+</div>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='Temperature reading showing high maximum and low minimum in spring' src='images/cold_frame_reading_before.jpg'>
+<div class='caption'>
+<p>
+Temperature reading showing high maximum and low minimum in spring
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>Design</h3>
+<p>
+Having abandoned an electronic approach and with it being mid-spring the urgency of this
+increased. Knowing that spare wax cylinders for the greenhouse arms are available on Amazon
+for £12 initially I was attempting to adapt the exising design of those to suit the cold
+frame. These are composed of two arms and fixings at both end. The wax cylinder has a lever
+which then extends when in direct sunlight and contracts, with some pressure applied, for
+example with a spring. This separates the two arms lifting the windows in the Greenhouse.
+</p>
+<p>
+Having spent quite a lot of time in Fusion 360 trying to replicate this I quickly realised
+that this wasn't necessary in my case. However, the time was spent well learning about
+collision and joints in Fusion 360.
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='Screenshot of Fusion 360 with complex design which was abandoned' src='images/cold_frame_lifter_complex_2_arm.jpg'>
+<div class='caption'>
+<p>
+First design with two arms (abandoned)
+</p>
+</div>
+</div>
+</div>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='Screenshot of Fusion 360 with complex design which was also abandoned' src='images/cold_frame_lifter_complex_1_arm.jpg'>
+<div class='caption'>
+<p>
+Second design with one arm but fixing to push off (also abandoned)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<h3>Solution</h3>
+<p>
+Having spent some time looking at the two-armed and one-armed approach the chosen solution
+had no arms at all!
+</p>
+<div class='thumbnail'>
+<img alt='Screenshot of Fusion 360 with much simpler design' src='images/cold_frame_lifter_simple_design.jpg'>
+<div class='caption'>
+<p>
+The final design
+</p>
+</div>
+</div>
+<p>
+This design has two parts:
+</p>
+<ul>
+<li>
+A fixing that the cylinder can be hand screwed into, as this example had threading.
+It can then be screwed into the wood of the cold frame at a suitable distance from the
+hinge with a couple of short wood screws.
+</li>
+<li>
+A cap on the end of the lever which distributes the force on the surface of the lid.
+</li>
+</ul>
+<p>
+This design assumes that the lid is weighted as the cylinder will not retract unless some
+force is applied. In the case of green houses that comes from a spring, for this it relies
+on the weight of the lid.
+</p>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='Close-up of the design from the left-hand-side of it in the cold frame' src='images/cold_frame_lifter_closeup_lhs.jpg'>
+</div>
+</div>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='Close-up of the design from the right-hand-side of it in the cold frame' src='images/cold_frame_lifter_closeup_rhs.jpg'>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<div class='thumbnail'>
+<img alt='Cold frame with lid open and happy plants on show' src='images/cold_frame_lifter_open_top.jpg'>
+<div class='caption'>
+<p>
+Happy plants! Marigolds, tomatoes, multi-sown beetroots, cabbages, peppers and turnips.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-6'>
+<h2>Conclusions</h2>
+<p>
+The simple design has worked really well for me. My cold frame is south facing so when the
+sun does come out it's providing direct sunlight to the wax cylinder so it reliably opens
+in hot sunny weather and closes in the evening. It does peak quite high sometimes but
+presumably cools as it does open - it would be really nice to have the temperature and
+humidity monitored as a time-series at some point.
+</p>
+<p>
+Having given one of these to someone else they have reported
+not so much success. Their cold-frame is north facing and somewhat shaded. The only
+conclusion from that is that it won't operate as well without direct sunlight and that the
+wax will not expand from just warmth alone but requiring also the sun's rays on the black
+painted cylinder, which in my case is well exposed.
+</p>
+<p>
+With this project simpler is better. I am glad to have abandoned my previous ideas. Always
+start with something simple!
+</p>
+<p>
+With that in mind, the existing solutions had influenced my design. They shouldn't have
+really other than providing the direction towards the use of the wax cylinder.
+</p>
+<h2>Bill of Material and STLs</h2>
+<p>
+If you want to build one of these yourself you'll need:
+</p>
+<ul>
+<li>
+3D printed parts (I used PET - ABS would work well I guess but PLA would probably wear
+from UV).
+<a href="downloads/April - Cold Frame Opener.zip">STLs available here</a>
+.
+</li>
+<li>
+The wax cylinder.
+<a target="_blank" href="https://www.amazon.co.uk/gp/product/B07PPJ3LSJ/">I bought this one on Amazon</a>
+.
+</li>
+<li>
+4 x short wood screws and a screwdriver.
+</li>
+</ul>
+</div>
+<div class='col-md-6'>
+<div class='thumbnail'>
+<img alt='Close-up of the design from the right-hand-side of it in the cold frame' src='images/cold_frame_lifter_overview.jpg'>
+</div>
+</div>
+</div>
+</div>
+
+      <div class="container-fluid">
+        <div class="row footer-row">
+          <div class="col-sm-12 footer-blurb">
+            <p>
+              <small>
+                © Copyright 2021 <a target="_blank" href="https://www.twitter.com/aggronerd">@aggronerd</a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
